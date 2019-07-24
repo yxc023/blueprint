@@ -1,0 +1,4 @@
+rootProject.name = 'blueprint'
+include 'blueprint-application'
+include 'blueprint-order'
+
