@@ -9,3 +9,18 @@ dependencies {
 
     implementation project(":blueprint-order")
 }
+
+
+
+//javadoc {
+//    options.docletpath = project.configurations.asciidoclet.files.asType(List)
+//    options.doclet = 'org.asciidoctor.Asciidoclet'
+//    options.showFromPrivate()
+//    options.addStringOption "nohelp"
+////    options.overview = "docs/asciidoc/overview.adoc"
+//    options.addStringOption "-base-dir", "${projectDir}"
+////    options.addStringOption "-attribute",
+////    "name=${project.name}," +
+////            "version=${project.version}," +
+////            "title-link=http://example.com[${project.name} ${project.version}]"
+//}

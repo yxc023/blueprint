@@ -18,7 +18,7 @@ buildscript {
 }
 
 // 对每个子工程设置
-subprojects {
+subprojects { p ->
     apply plugin: 'java'
 
     // 设置 groupid 和 version, artifact id 由子项目文件夹名字决定
@@ -33,20 +33,31 @@ subprojects {
         }
     }
 
+    configurations {
+        asciidoclet
+    }
+
     // 设置通用依赖
     dependencies {
+        asciidoclet 'org.asciidoctor:asciidoclet:1.+'
         testImplementation 'junit:junit:4.12'
         implementation 'org.slf4j:slf4j-api:1.7.25'
         implementation 'org.projectlombok:lombok:1.18.2'
         // 注解处理器
         annotationProcessor 'org.projectlombok:lombok:1.18.2'
     }
-    
+
+
+
+
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
 
     tasks.withType(Javadoc) {
+        options.docletpath = configurations.asciidoclet.files.asType(List)
+        options.doclet = 'org.asciidoctor.Asciidoclet'
+        options.addStringOption "-base-dir", "${p.projectDir}"
         failOnError false
         options.encoding = 'UTF-8'
         options.charSet = 'UTF-8'

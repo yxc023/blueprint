@@ -9,7 +9,7 @@ public interface OrderFacade {
     /**
      * 获取订单
      * @param orderId
-     * @return
+     * @return 订单信息
      */
     OrderDTO getByOrderId(Long orderId);
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/order")
-public class OrderHttpApi {
+public class OrderApiController {
 
     /**
      * GET /api/order?orderId=1001
@@ -34,20 +34,21 @@ public class OrderHttpApi {
 
 
     /**
+     * ----
      * POST /api/order/create
+     * ----
+     * <p>
+     * |===
+     * |code|描述
+     * |SUCCESS
+     * |成功
      *
-     * {orderCreateParamJson...}
+     * |REPEAT_SUBMIT
+     * |重复提交
+     * |===
      *
-     * {@literal
-     *
-     * code: 1 - 成功
-     * code:
-     *
-     *
-     * }
      * @param orderCreateParam
-     * @return
-     *
+     * @return 订单号
      */
     @RequestMapping(value = "/create", method = RequestMethod.POST, consumes = "application/json")
     public ApiResult<Long> createOrder(@RequestBody OrderCreateParam orderCreateParam) {
