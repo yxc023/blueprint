@@ -1,0 +1,19 @@
+
+
+configurations {
+    asciidoclet
+}
+
+dependencies {
+    asciidoclet 'org.asciidoctor:asciidoclet:1.+'
+}
+
+tasks.withType(Javadoc) {
+    options.docletpath = configurations.asciidoclet.files.asType(List)
+    options.doclet = 'org.asciidoctor.Asciidoclet'
+    options.addStringOption "-base-dir", "${project.projectDir}"
+    failOnError false
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.docEncoding = 'UTF-8'
+}

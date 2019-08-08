@@ -1,4 +1,4 @@
 
 dependencies {
-    implementation 'com.yangxiaochen:exception-core:1.0.0-RELEASE'
+    implementation 'com.yangxiaochen:expressive-exception-core:1.1.0-RELEASE'
 }

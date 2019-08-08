@@ -8,6 +8,7 @@ dependencies {
 //    implementation("org.springframework:spring-context-support")
 
     implementation project(":blueprint-order")
+    implementation project(":blueprint-api-dubbo")
 }
 
 

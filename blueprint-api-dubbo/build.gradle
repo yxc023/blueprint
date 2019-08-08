@@ -1,0 +1,17 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    // api like scope compile in pom
+    // more info https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:migrating_deps
+    api 'com.yangxiaochen:expressive-exception-core:1.1.0-RELEASE'
+
+    // implementation like scope runtime in pom
+    implementation 'org.apache.commons:commons-lang3:3.9'
+}
+
+
+apply from: "${rootProject.projectDir}/gradle/javadoc-asciidoclet.gradle"
+apply from: "${rootProject.projectDir}/gradle/publish-oss.gradle"
+
