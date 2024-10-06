@@ -1,4 +1,4 @@
-package com.yangxiaochen.blueprint.order.service.exception;
+package com.yangxiaochen.blueprint.order.exception;
 
 import com.yangxiaochen.exception.core.BaseExprRuntimeException;
 

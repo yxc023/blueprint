@@ -1,5 +1,8 @@
 rootProject.name = 'blueprint'
 include 'blueprint-application'
+include 'blueprint-api'
 include 'blueprint-order'
-include 'blueprint-api-dubbo'
+include 'blueprint-product'
+include 'blueprint-inventory'
+include 'blueprint-trade'
 
