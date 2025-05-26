@@ -1,14 +1,23 @@
 package com.yangxiaochen.blueprint.order;
 
+import com.yangxiaochen.blueprint.order.domain.domain.CreatingOrderDomain;
+import com.yangxiaochen.blueprint.order.domain.domain.OrderDomain;
 import com.yangxiaochen.blueprint.order.exception.OrderException;
+import com.yangxiaochen.blueprint.order.repo.OrderRepository;
+import com.yangxiaochen.blueprint.order.service.OrderService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OrderDomainFactory {
 
-    public Long createOrder() {
-        throw new OrderException("No permission to buy this goods").code(OrderException.Codes.NO_BUY_PERMISSION)
-                .tip("你没有购买该商品的权限")
-                .serviceLevel();
+    private OrderService orderService;
+    private OrderRepository orderRepository;
+
+    public CreatingOrderDomain getCreatingOrderDomain(String params) {
+        return new CreatingOrderDomain(params);
+    }
+
+    public OrderDomain getOrderDomain(Long orderId) {
+        return new OrderDomain(orderId, orderService, orderRepository);
     }
 }

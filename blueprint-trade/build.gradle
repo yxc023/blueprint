@@ -1,4 +1,7 @@
 
 dependencies {
     implementation 'com.yangxiaochen:expressive-exception-core:1.1.0-RELEASE'
+
+    implementation project(':blueprint-order')
+    implementation project(':blueprint-inventory')
 }
